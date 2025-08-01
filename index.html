@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴黎三日游</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- 日期切换菜单 -->
+        <nav class="date-nav">
+            <button class="date-btn active" data-date="8.2">
+                <span class="date-number">8.2</span>
+                <span class="date-text">第一天</span>
+            </button>
+            <button class="date-btn" data-date="8.3">
+                <span class="date-number">8.3</span>
+                <span class="date-text">第二天</span>
+            </button>
+            <button class="date-btn" data-date="8.4">
+                <span class="date-number">8.4</span>
+                <span class="date-text">第三天</span>
+            </button>
+        </nav>
+
+        <!-- 时间线 -->
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-track">
+                    <div class="timeline-progress" id="timeline-progress"></div>
+                    <div class="timeline-current-marker" id="timeline-current-marker"></div>
+                    <div class="timeline-attractions" id="timeline-attractions">
+                        <!-- 景点图标将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+                <div class="timeline-labels">
+                    <div class="timeline-label">
+                        <span class="time">10:20</span>
+                    </div>
+                    <div class="timeline-label">
+                        <span class="time">23:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 地图容器 -->
+        <div class="map-container">
+            <div id="map"></div>
+            <!-- 切换模式按钮 -->
+            <button class="mode-toggle-btn" id="mode-toggle-btn">
+                <span class="mode-icon">📋</span>
+                <span class="mode-text">表格模式</span>
+            </button>
+            <!-- 景点详情 -->
+            <div class="attractions-list">
+                <h3 class="day-title">8月2日 - 第一天</h3>
+                <div class="attraction-detail" id="attraction-detail">
+                    <div class="detail-placeholder">
+                        <div class="placeholder-icon">🗺️</div>
+                        <div class="placeholder-text">点击地图上的景点查看详细信息</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 表格模式容器 -->
+        <div class="table-container" id="table-container" style="display: none;">
+            <div class="table-header">
+                <h3 class="day-title">8月2日 - 第一天</h3>
+                <button class="mode-toggle-btn" id="table-mode-toggle-btn">
+                    <span class="mode-icon">🗺️</span>
+                    <span class="mode-text">地图模式</span>
+                </button>
+            </div>
+            <div class="table-content">
+                <table class="attractions-table" id="attractions-table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>地点</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 表格内容将通过JavaScript动态加载 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
